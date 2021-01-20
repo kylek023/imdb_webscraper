@@ -65,6 +65,18 @@ Plot: {check_valid('description')}
         while True:
             a=input()
             if a=='y'or 'Y':
+                with open(f'filmshow/{check_valid("name")}.text', 'w') as f:
+                    f.write(f'''Name: {check_valid("name")}
+Type: {check_valid('@type')}
+Genre: {check_valid('genre')}
+Released Date: {year}
+Country: {country}
+Top actors/actresses: {check_valid('actor','name')}
+Parent rating: {check_valid('contentRating')}
+Director: {check_valid('director','name')}
+Writers: {check_valid('creator', 'name')}
+Average Score: {check_valid('aggregateRating','ratingValue')}
+Plot: {check_valid('description')} ''')
                 break
             elif a=='n' or 'N':
                 print("Thank you")
